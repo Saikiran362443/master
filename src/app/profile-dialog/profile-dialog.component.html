@@ -1,0 +1,59 @@
+<div class="dialog-heading p-2">Edit Profile</div>
+
+<div class="p-3">
+  <div class="mx-auto">
+    <div class="d-flex align-items-center">
+      <div class="w-25">Name :</div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.name" />
+      </mat-form-field>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="w-25">Domain :</div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.domain" />
+      </mat-form-field>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="w-25">Gender :</div>
+      <mat-radio-group [(ngModel)]="data.gender">
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="w-25">Date of birth :</div>
+      <mat-form-field appearance="fill">
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [(ngModel)]="data.dateOfBirth"
+        />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="w-25">Phone :</div>
+      <mat-form-field class="w-25 mx-1">
+        <input matInput [(ngModel)]="data.phonePrefix" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.phone" />
+      </mat-form-field>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="w-25">Location :</div>
+      <mat-form-field>
+        <textarea matInput [(ngModel)]="data.location"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+  <button mat-raised-button color="accent" class="mx-2" (click)="update()">
+    Update
+  </button>
+</div>
